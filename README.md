@@ -448,7 +448,7 @@ If you're interested in any of these, just send me a message!
 - `sqlite-notion`: Query and insert data into Notion databases
 - `sqlite-google-sheets`: query and insert data into Google Sheet
 
-## Future Tooling
+### Future Tooling
 
 - `sqlite-package-manager`: A command-line tool for manage SQLite extensions for your project, similar to npm/pip/brew
 - `sqlite-docs`: Document SQLite tables and columns with in-line comments on `CREATE TABLE` statements, like JSDoc/rustdoc/docstrings
