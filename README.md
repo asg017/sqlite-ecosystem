@@ -20,7 +20,7 @@ These are all the loadable SQLite extensions I have built, along with which prog
 | [`sqlite-ulid`](#sqlite-ulid)             | Work with ULIDs                        | Rust     |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
 | [`sqlite-jsonschema`](#sqlite-jsonschema) | Validate JSON objects with JSON Schema | Rust     |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
 | [`sqlite-fastrand`](#sqlite-fastrand)     | Generate fast numbers/blobs quickly    | Rust     |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
-| [`sqlite-vss`](#sqlite-vss)               | Vector search in SQLite                | C++      |            ✅            |  🚧  |  🚧  |  🚧   |        🚧         |
+| [`sqlite-vss`](#sqlite-vss)               | Vector search in SQLite                | C++      |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
 
 ## Extensions
 
@@ -328,12 +328,12 @@ Prebuilt loadable extensions available for:
 - `darwin-x64` (MacOS x86_64)
 - `linux-x64` (Linux x86_64)
 
-| Language/Platform | Install           |     |
-| ----------------- | ----------------- | --- |
-| Python            | Not available yet |     |
-| Node.js           | Not available yet |     |
-| Deno              | Not available yet |     |
-| Datasette         | Not available yet |     |
+| Language/Platform | Install                                  |                                                                                                                   |
+| ----------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Python            | `pip install sqlite-vss`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-vss.svg)](https://pypi.org/project/sqlite-vss/)                     |
+| Node.js           | `npm install sqlite-vss`                 | [![npm](https://img.shields.io/npm/v/sqlite-vss.svg)](https://www.npmjs.com/package/sqlite-vss)                   |
+| Deno              | https://deno.land/x/sqlite_vss           | [![deno version](https://deno.land/badge/sqlite_vss/version)](https://deno.land/x/sqlite_vss)                     |
+| Datasette         | `datasette install datasette-sqlite-vss` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-vss.svg)](https://pypi.org/project/datasette-sqlite-vss/) |
 
 ### Distribution
 
