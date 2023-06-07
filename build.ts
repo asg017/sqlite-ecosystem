@@ -21,8 +21,8 @@ function printExtensions(extensions: Extension[]): string {
 ${extensions
   .map(
     (extension) => `
-    
-### [\`${extension.repo}\`](https://github.com/${extension.repo})
+
+### [\`${extension.repo}\`](https://github.com/asg017/${extension.repo})
 
 ${extension.long}
 
@@ -40,17 +40,18 @@ ${printExtensionPlatforms(extension)}
 function printExtensionDistribution({ repo, no_datasette }: Extension): string {
   const repoSnake = repo.replaceAll("-", "_");
   return `
-  
+
  | Language/Platform | Install                                    |                                                                                                                                                                                      |
 | ----------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Python            | \`pip install ${repo}\`                 | [![PyPI](https://img.shields.io/pypi/v/${repo}.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/${repo}/)                                             |
 | Node.js           | \`npm install ${repo}\`                 | [![npm](https://img.shields.io/npm/v/${repo}.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/${repo})                                       |
-| Deno              | [\`deno.land/x/${repoSnake}\`](https://deno.land/x/${repoSnake})           | [![deno version](https://deno.land/badge/${repoSnake}/version?color=fef8d2)](https://deno.land/x/${repoSnake})                                                                       |${
+| Deno              | [\`deno.land/x/${repoSnake}\`](https://deno.land/x/${repoSnake})           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/${repo}?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/${repoSnake})                                                                       |${
     no_datasette
       ? ``
       : `\n| Datasette         | \`datasette install datasette-${repo}\` | [![PyPI](https://img.shields.io/pypi/v/datasette-${repo}.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-${repo}) |`
   }
-| Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/${repo}?color=lightgrey&include_prereleases&label=Github+release&logo=github)  
+| Ruby              | \`gem install ${repo}\`                 | ![Gem](https://img.shields.io/gem/v/${repo}?color=red&logo=rubygems&logoColor=white)                                                                                                  |
+| Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/${repo}?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
 `;
 }
@@ -77,7 +78,7 @@ function main() {
 
   Deno.writeTextFileSync(
     "README.md",
-    ` 
+    `
 
 ${document.header}
 
