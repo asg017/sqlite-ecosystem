@@ -10,19 +10,19 @@ Feel free to start a discussion in this repo about meta-level SQLite extension a
 
 These are all the loadable SQLite extensions I have built, along with which programming language they are written in and where they are distributed.
 
-| Extension                                 | Description                            | Language | Pre-compiled extensions? | pip? | npm? | Deno? | Datasette plugin? |
-| ----------------------------------------- | -------------------------------------- | -------- | :----------------------: | :--: | :--: | :---: | :---------------: |
-| [`sqlite-http`](#sqlite-http)             | Make HTTP requests                     | Go       |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
-| [`sqlite-html`](#sqlite-html)             | parse HTML documents                   | Go       |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
-| [`sqlite-lines`](#sqlite-lines)           | Read files/blob line-by-line           | C        |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
-| [`sqlite-path`](#sqlite-path)             | Parse and generate filepaths           | C        |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
-| [`sqlite-url`](#sqlite-url)               | Parse and generate URLs                | C        |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
-| [`sqlite-xsv`](#sqlite-xsv)               | Query CSVs                             | Rust     |            ✅            |  ✅  |  ✅  |  ✅   |        🚧         |
-| [`sqlite-regex`](#sqlite-regex)           | Regular expression functions           | Rust     |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
-| [`sqlite-ulid`](#sqlite-ulid)             | Work with ULIDs                        | Rust     |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
-| [`sqlite-jsonschema`](#sqlite-jsonschema) | Validate JSON objects with JSON Schema | Rust     |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
-| [`sqlite-fastrand`](#sqlite-fastrand)     | Generate fast numbers/blobs quickly    | Rust     |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
-| [`sqlite-vss`](#sqlite-vss)               | Vector search in SQLite                | C++      |            ✅            |  ✅  |  ✅  |  ✅   |        ✅         |
+| Extension                                 | Description                            | Language | pip  | npm  | Deno  | Datasette | Ruby |
+| ----------------------------------------- | -------------------------------------- | -------- | :--: | :--: | :---: | :-------: | :--: |
+| [`sqlite-http`](#sqlite-http)             | Make HTTP requests                     | Go       |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
+| [`sqlite-html`](#sqlite-html)             | parse HTML documents                   | Go       |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
+| [`sqlite-lines`](#sqlite-lines)           | Read files/blob line-by-line           | C        |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
+| [`sqlite-path`](#sqlite-path)             | Parse and generate filepaths           | C        |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
+| [`sqlite-url`](#sqlite-url)               | Parse and generate URLs                | C        |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
+| [`sqlite-xsv`](#sqlite-xsv)               | Query CSVs                             | Rust     |  ✅  |  ✅  |  ✅   |    🚧     |  ✅  |
+| [`sqlite-regex`](#sqlite-regex)           | Regular expression functions           | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
+| [`sqlite-ulid`](#sqlite-ulid)             | Work with ULIDs                        | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
+| [`sqlite-jsonschema`](#sqlite-jsonschema) | Validate JSON objects with JSON Schema | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
+| [`sqlite-fastrand`](#sqlite-fastrand)     | Generate fast numbers/blobs quickly    | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
+| [`sqlite-vss`](#sqlite-vss)               | Vector search in SQLite                | C++      |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
 
 
 ## Extensions
