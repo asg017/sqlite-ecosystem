@@ -569,6 +569,26 @@ console.log(version);
 
 See [the "Deno" section of _Making SQLite extensions npm install'able for Node.js, and on deno.land/x for Deno_](https://observablehq.com/@asg017/making-sqlite-extensions-npm-installable-and-deno#cell-13) (March 2023) for more details.
 
+### `gem` for ruby Developers
+
+These extensions are also distributed on [rubygems.org](https://rubygems.org/) for use in Ruby applications. It's meant to work with the [`sqlite3`](https://rubygems.org/gems/sqlite3) client like so:
+
+```ruby
+require 'sqlite3'
+require 'sqlite_regex'
+
+db = SQLite3::Database.new(':memory:')
+db.enable_load_extension(true)
+SqliteRegex.load(db)
+db.enable_load_extension(false)
+
+result = db.execute("select regex_version(), '[abc]' regexp 'a';")
+puts result.first.first # "v0.2.3-alpha.7"
+puts result.first.last  # 1
+```
+
+See [_Making SQLite extension gem install'able for Ruby Developers_](https://observablehq.com/@asg017/making-sqlite-extension-gem-installable) (June 2023) for more details.
+
 ### As Datasette Plugins
 
 Most of these SQLite extensions are also distributed as [Datasette Plugins](https://datasette.io/plugins). They are small wrappers around their cooresponding [pip packages](#pip-for-python-developers).
@@ -607,6 +627,12 @@ If you're interested in any of these, just send me a message!
 - `sqlite-pg`: Query and insert data into Postgres tables
 - `sqlite-notion`: Query and insert data into Notion databases
 - `sqlite-google-sheets`: query and insert data into Google Sheet
+
+### Future Extension Bindings
+
+- Elixir
+- Rust
+- Go
 
 ### Future Tooling
 
