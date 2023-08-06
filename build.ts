@@ -10,6 +10,7 @@ interface Extension {
   language: string;
   platforms: string[];
   no_datasette?: boolean;
+  no_sqlite_utils?: boolean;
   short: string;
   long: string;
 }
@@ -37,7 +38,11 @@ ${printExtensionPlatforms(extension)}
 
   `;
 }
-function printExtensionDistribution({ repo, no_datasette }: Extension): string {
+function printExtensionDistribution({
+  repo,
+  no_datasette,
+  no_sqlite_utils,
+}: Extension): string {
   const repoSnake = repo.replaceAll("-", "_");
   return `
 
@@ -48,7 +53,11 @@ function printExtensionDistribution({ repo, no_datasette }: Extension): string {
 | Deno              | [\`deno.land/x/${repoSnake}\`](https://deno.land/x/${repoSnake})           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/${repo}?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/${repoSnake})                                                                       |${
     no_datasette
       ? ``
-      : `\n| Datasette         | \`datasette install datasette-${repo}\` | [![PyPI](https://img.shields.io/pypi/v/datasette-${repo}.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-${repo}) |`
+      : `\n| [Datasette](https://datasette.io/)         | \`datasette install datasette-${repo}\` | [![PyPI](https://img.shields.io/pypi/v/datasette-${repo}.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-${repo}) |`
+  }${
+    no_sqlite_utils
+      ? ``
+      : `\n| [sqlite-utils](https://sqlite-utils.datasette.io/)         | \`sqlite-utils install sqlite-utils-${repo}\` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-${repo}.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-${repo}) |`
   }
 | Ruby              | \`gem install ${repo}\`                 | ![Gem](https://img.shields.io/gem/v/${repo}?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/${repo}?color=lightgrey&include_prereleases&label=Github+release&logo=github)

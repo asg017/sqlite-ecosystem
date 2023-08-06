@@ -9,24 +9,24 @@ header: |
 
   These are all the loadable SQLite extensions I have built, along with which programming language they are written in and where they are distributed.
 
-  | Extension                                 | Description                            | Language | pip  | npm  | Deno  | Datasette | Ruby |
-  | ----------------------------------------- | -------------------------------------- | -------- | :--: | :--: | :---: | :-------: | :--: |
-  | [`sqlite-http`](#sqlite-http)             | Make HTTP requests                     | Go       |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-  | [`sqlite-html`](#sqlite-html)             | parse HTML documents                   | Go       |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-  | [`sqlite-lines`](#sqlite-lines)           | Read files/blob line-by-line           | C        |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-  | [`sqlite-path`](#sqlite-path)             | Parse and generate filepaths           | C        |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-  | [`sqlite-url`](#sqlite-url)               | Parse and generate URLs                | C        |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-  | [`sqlite-xsv`](#sqlite-xsv)               | Query CSVs                             | Rust     |  ✅  |  ✅  |  ✅   |    🚧     |  ✅  |
-  | [`sqlite-regex`](#sqlite-regex)           | Regular expression functions           | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-  | [`sqlite-ulid`](#sqlite-ulid)             | Work with ULIDs                        | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-  | [`sqlite-jsonschema`](#sqlite-jsonschema) | Validate JSON objects with JSON Schema | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-  | [`sqlite-fastrand`](#sqlite-fastrand)     | Generate fast numbers/blobs quickly    | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-  | [`sqlite-vss`](#sqlite-vss)               | Vector search in SQLite                | C++      |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
+  | Extension                                 | Description                            | Language | Python  | Node.js  | Deno  | Ruby | Datasette  | sqlite-utils |
+  | ----------------------------------------- | -------------------------------------- | -------- | :--: | :--: | :---: | :--: | :-------: | :-----: |
+  | [`sqlite-http`](#sqlite-http)             | Make HTTP requests                     | Go       |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+  | [`sqlite-html`](#sqlite-html)             | parse HTML documents                   | Go       |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+  | [`sqlite-lines`](#sqlite-lines)           | Read files/blob line-by-line           | C        |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+  | [`sqlite-path`](#sqlite-path)             | Parse and generate filepaths           | C        |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+  | [`sqlite-url`](#sqlite-url)               | Parse and generate URLs                | C        |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+  | [`sqlite-xsv`](#sqlite-xsv)               | Query CSVs                             | Rust     |  ✅  |  ✅  |  ✅    |  ✅  |     🚧      | 🚧 |
+  | [`sqlite-regex`](#sqlite-regex)           | Regular expression functions           | Rust     |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+  | [`sqlite-ulid`](#sqlite-ulid)             | Work with ULIDs                        | Rust     |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+  | [`sqlite-jsonschema`](#sqlite-jsonschema) | Validate JSON objects with JSON Schema | Rust     |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+  | [`sqlite-fastrand`](#sqlite-fastrand)     | Generate fast numbers/blobs quickly    | Rust     |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+  | [`sqlite-vss`](#sqlite-vss)               | Vector search in SQLite                | C++      |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
 
 extensions:
   - repo: sqlite-http
     lang: Go
-    platforms: [linux-x86_64, macos-x86_64, windows-x86_64]
+    platforms: [linux-x86_64, macos-x86_64, macos-aarch64, windows-x86_64]
     short: Make HTTP requests
     long: |
 
@@ -43,7 +43,7 @@ extensions:
       ```
   - repo: sqlite-html
     lang: Go
-    platforms: [linux-x86_64, macos-x86_64, windows-x86_64]
+    platforms: [linux-x86_64, macos-x86_64, macos-aarch64, windows-x86_64]
     short: parse HTML documents
     long: |
 
@@ -58,7 +58,7 @@ extensions:
       ```
   - repo: sqlite-lines
     lang: C
-    platforms: [linux-x86_64, macos-x86_64]
+    platforms: [linux-x86_64, macos-x86_64, macos-aarch64]
     short: Read files/blob line-by-line
     long: |
 
@@ -69,7 +69,7 @@ extensions:
       ```
   - repo: sqlite-path
     lang: C
-    platforms: [linux-x86_64, macos-x86_64, windows-x86_64]
+    platforms: [linux-x86_64, macos-x86_64, macos-aarch64, windows-x86_64]
     short: Parse and generate filepaths
     long: |
 
@@ -101,6 +101,7 @@ extensions:
     lang: Rust
     platforms: [linux-x86_64, macos-x86_64, macos-aarch64, windows-x86_64]
     no_datasette: true
+    no_sqlite_utils: true
     short: Query CSVs
     long: |
 
@@ -331,7 +332,7 @@ footer: |
 
   ### As Datasette Plugins
 
-  Most of these SQLite extensions are also distributed as [Datasette Plugins](https://datasette.io/plugins). They are small wrappers around their cooresponding [pip packages](#pip-for-python-developers).
+  Most of these SQLite extensions are also distributed as [Datasette Plugins](https://datasette.io/plugins). They are small wrappers around their corresponding [pip packages](#pip-for-python-developers).
 
   They can be installed like so:
 
@@ -345,6 +346,22 @@ footer: |
   $ datasette --get '/_memory.csv?sql=select+regex_version()'
   regex_version()
   v0.1.0
+  ```
+  ### As sqlite-utils Plugins
+
+  Most of these SQLite extensions are also distributed as [sqlite-utils plugins](https://sqlite-utils.datasette.io/en/stable/plugins.html). They are small wrappers around their corresponding [pip packages](#pip-for-python-developers).
+
+  They can be installed like so:
+
+  ```bash
+  sqlite-utils install sqlite-utils-sqlite-regex
+  ```
+
+  Now when using the sqlite-utils CLI, the `sqlite-regex` functions will be available.
+
+  ```
+  $ sqlite-utils memory 'select regex_version()'
+  [{"regex_version()": "v0.2.3"}]
   ```
 
   ## Roadmap

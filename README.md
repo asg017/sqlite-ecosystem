@@ -10,19 +10,19 @@ Feel free to start a discussion in this repo about meta-level SQLite extension a
 
 These are all the loadable SQLite extensions I have built, along with which programming language they are written in and where they are distributed.
 
-| Extension                                 | Description                            | Language | pip  | npm  | Deno  | Datasette | Ruby |
-| ----------------------------------------- | -------------------------------------- | -------- | :--: | :--: | :---: | :-------: | :--: |
-| [`sqlite-http`](#sqlite-http)             | Make HTTP requests                     | Go       |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-| [`sqlite-html`](#sqlite-html)             | parse HTML documents                   | Go       |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-| [`sqlite-lines`](#sqlite-lines)           | Read files/blob line-by-line           | C        |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-| [`sqlite-path`](#sqlite-path)             | Parse and generate filepaths           | C        |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-| [`sqlite-url`](#sqlite-url)               | Parse and generate URLs                | C        |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-| [`sqlite-xsv`](#sqlite-xsv)               | Query CSVs                             | Rust     |  ✅  |  ✅  |  ✅   |    🚧     |  ✅  |
-| [`sqlite-regex`](#sqlite-regex)           | Regular expression functions           | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-| [`sqlite-ulid`](#sqlite-ulid)             | Work with ULIDs                        | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-| [`sqlite-jsonschema`](#sqlite-jsonschema) | Validate JSON objects with JSON Schema | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-| [`sqlite-fastrand`](#sqlite-fastrand)     | Generate fast numbers/blobs quickly    | Rust     |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
-| [`sqlite-vss`](#sqlite-vss)               | Vector search in SQLite                | C++      |  ✅  |  ✅  |  ✅   |    ✅     |  ✅  |
+| Extension                                 | Description                            | Language | Python  | Node.js  | Deno  | Ruby | Datasette  | sqlite-utils |
+| ----------------------------------------- | -------------------------------------- | -------- | :--: | :--: | :---: | :--: | :-------: | :-----: |
+| [`sqlite-http`](#sqlite-http)             | Make HTTP requests                     | Go       |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+| [`sqlite-html`](#sqlite-html)             | parse HTML documents                   | Go       |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+| [`sqlite-lines`](#sqlite-lines)           | Read files/blob line-by-line           | C        |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+| [`sqlite-path`](#sqlite-path)             | Parse and generate filepaths           | C        |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+| [`sqlite-url`](#sqlite-url)               | Parse and generate URLs                | C        |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+| [`sqlite-xsv`](#sqlite-xsv)               | Query CSVs                             | Rust     |  ✅  |  ✅  |  ✅    |  ✅  |     🚧      | 🚧 |
+| [`sqlite-regex`](#sqlite-regex)           | Regular expression functions           | Rust     |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+| [`sqlite-ulid`](#sqlite-ulid)             | Work with ULIDs                        | Rust     |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+| [`sqlite-jsonschema`](#sqlite-jsonschema) | Validate JSON objects with JSON Schema | Rust     |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+| [`sqlite-fastrand`](#sqlite-fastrand)     | Generate fast numbers/blobs quickly    | Rust     |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
+| [`sqlite-vss`](#sqlite-vss)               | Vector search in SQLite                | C++      |  ✅  |  ✅  |  ✅    |  ✅  |     ✅      | ✅ |
 
 
 ## Extensions
@@ -55,7 +55,8 @@ select
 | Python            | `pip install sqlite-http`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-http.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/sqlite-http/)                                             |
 | Node.js           | `npm install sqlite-http`                 | [![npm](https://img.shields.io/npm/v/sqlite-http.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/sqlite-http)                                       |
 | Deno              | [`deno.land/x/sqlite_http`](https://deno.land/x/sqlite_http)           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/sqlite-http?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/sqlite_http)                                                                       |
-| Datasette         | `datasette install datasette-sqlite-http` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-http.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-http) |
+| [Datasette](https://datasette.io/)         | `datasette install datasette-sqlite-http` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-http.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-http) |
+| [sqlite-utils](https://sqlite-utils.datasette.io/)         | `sqlite-utils install sqlite-utils-sqlite-http` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-sqlite-http.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-sqlite-http) |
 | Ruby              | `gem install sqlite-http`                 | ![Gem](https://img.shields.io/gem/v/sqlite-http?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/sqlite-http?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
@@ -63,6 +64,7 @@ select
 
 - `linux-x86_64` (Linux x86_64)
 - `macos-x86_64` (MacOS x86_64)
+- `macos-aarch64` (MacOS M1 and M2 chips)
 - `windows-x86_64` (Windows x86_64)
 
 
@@ -91,7 +93,8 @@ select html_extract('<p> Anakin <b>Skywalker</b> </p>', 'b'); -- "<b>Skywalker</
 | Python            | `pip install sqlite-html`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-html.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/sqlite-html/)                                             |
 | Node.js           | `npm install sqlite-html`                 | [![npm](https://img.shields.io/npm/v/sqlite-html.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/sqlite-html)                                       |
 | Deno              | [`deno.land/x/sqlite_html`](https://deno.land/x/sqlite_html)           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/sqlite-html?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/sqlite_html)                                                                       |
-| Datasette         | `datasette install datasette-sqlite-html` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-html.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-html) |
+| [Datasette](https://datasette.io/)         | `datasette install datasette-sqlite-html` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-html.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-html) |
+| [sqlite-utils](https://sqlite-utils.datasette.io/)         | `sqlite-utils install sqlite-utils-sqlite-html` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-sqlite-html.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-sqlite-html) |
 | Ruby              | `gem install sqlite-html`                 | ![Gem](https://img.shields.io/gem/v/sqlite-html?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/sqlite-html?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
@@ -99,6 +102,7 @@ select html_extract('<p> Anakin <b>Skywalker</b> </p>', 'b'); -- "<b>Skywalker</
 
 - `linux-x86_64` (Linux x86_64)
 - `macos-x86_64` (MacOS x86_64)
+- `macos-aarch64` (MacOS M1 and M2 chips)
 - `windows-x86_64` (Windows x86_64)
 
 
@@ -123,7 +127,8 @@ select line from lines_read('logs.txt');
 | Python            | `pip install sqlite-lines`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-lines.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/sqlite-lines/)                                             |
 | Node.js           | `npm install sqlite-lines`                 | [![npm](https://img.shields.io/npm/v/sqlite-lines.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/sqlite-lines)                                       |
 | Deno              | [`deno.land/x/sqlite_lines`](https://deno.land/x/sqlite_lines)           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/sqlite-lines?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/sqlite_lines)                                                                       |
-| Datasette         | `datasette install datasette-sqlite-lines` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-lines.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-lines) |
+| [Datasette](https://datasette.io/)         | `datasette install datasette-sqlite-lines` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-lines.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-lines) |
+| [sqlite-utils](https://sqlite-utils.datasette.io/)         | `sqlite-utils install sqlite-utils-sqlite-lines` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-sqlite-lines.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-sqlite-lines) |
 | Ruby              | `gem install sqlite-lines`                 | ![Gem](https://img.shields.io/gem/v/sqlite-lines?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/sqlite-lines?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
@@ -131,6 +136,7 @@ select line from lines_read('logs.txt');
 
 - `linux-x86_64` (Linux x86_64)
 - `macos-x86_64` (MacOS x86_64)
+- `macos-aarch64` (MacOS M1 and M2 chips)
 
 
 
@@ -156,7 +162,8 @@ select path_extension('foo/bar.txt'); -- '.txt'
 | Python            | `pip install sqlite-path`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-path.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/sqlite-path/)                                             |
 | Node.js           | `npm install sqlite-path`                 | [![npm](https://img.shields.io/npm/v/sqlite-path.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/sqlite-path)                                       |
 | Deno              | [`deno.land/x/sqlite_path`](https://deno.land/x/sqlite_path)           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/sqlite-path?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/sqlite_path)                                                                       |
-| Datasette         | `datasette install datasette-sqlite-path` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-path.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-path) |
+| [Datasette](https://datasette.io/)         | `datasette install datasette-sqlite-path` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-path.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-path) |
+| [sqlite-utils](https://sqlite-utils.datasette.io/)         | `sqlite-utils install sqlite-utils-sqlite-path` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-sqlite-path.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-sqlite-path) |
 | Ruby              | `gem install sqlite-path`                 | ![Gem](https://img.shields.io/gem/v/sqlite-path?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/sqlite-path?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
@@ -164,6 +171,7 @@ select path_extension('foo/bar.txt'); -- '.txt'
 
 - `linux-x86_64` (Linux x86_64)
 - `macos-x86_64` (MacOS x86_64)
+- `macos-aarch64` (MacOS M1 and M2 chips)
 - `windows-x86_64` (Windows x86_64)
 
 
@@ -194,7 +202,8 @@ select url_host('https://www.sqlite.org/vtab.html#usage'); -- 'www.sqlite.org'
 | Python            | `pip install sqlite-url`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-url.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/sqlite-url/)                                             |
 | Node.js           | `npm install sqlite-url`                 | [![npm](https://img.shields.io/npm/v/sqlite-url.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/sqlite-url)                                       |
 | Deno              | [`deno.land/x/sqlite_url`](https://deno.land/x/sqlite_url)           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/sqlite-url?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/sqlite_url)                                                                       |
-| Datasette         | `datasette install datasette-sqlite-url` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-url.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-url) |
+| [Datasette](https://datasette.io/)         | `datasette install datasette-sqlite-url` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-url.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-url) |
+| [sqlite-utils](https://sqlite-utils.datasette.io/)         | `sqlite-utils install sqlite-utils-sqlite-url` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-sqlite-url.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-sqlite-url) |
 | Ruby              | `gem install sqlite-url`                 | ![Gem](https://img.shields.io/gem/v/sqlite-url?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/sqlite-url?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
@@ -296,7 +305,8 @@ from regex_find_all(
 | Python            | `pip install sqlite-regex`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-regex.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/sqlite-regex/)                                             |
 | Node.js           | `npm install sqlite-regex`                 | [![npm](https://img.shields.io/npm/v/sqlite-regex.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/sqlite-regex)                                       |
 | Deno              | [`deno.land/x/sqlite_regex`](https://deno.land/x/sqlite_regex)           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/sqlite-regex?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/sqlite_regex)                                                                       |
-| Datasette         | `datasette install datasette-sqlite-regex` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-regex.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-regex) |
+| [Datasette](https://datasette.io/)         | `datasette install datasette-sqlite-regex` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-regex.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-regex) |
+| [sqlite-utils](https://sqlite-utils.datasette.io/)         | `sqlite-utils install sqlite-utils-sqlite-regex` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-sqlite-regex.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-sqlite-regex) |
 | Ruby              | `gem install sqlite-regex`                 | ![Gem](https://img.shields.io/gem/v/sqlite-regex?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/sqlite-regex?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
@@ -332,7 +342,8 @@ select ulid_datetime('01gqr4j69cc7w1xdbarkcbpq17') -- '2023-01-26 22:53:20.556'
 | Python            | `pip install sqlite-ulid`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-ulid.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/sqlite-ulid/)                                             |
 | Node.js           | `npm install sqlite-ulid`                 | [![npm](https://img.shields.io/npm/v/sqlite-ulid.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/sqlite-ulid)                                       |
 | Deno              | [`deno.land/x/sqlite_ulid`](https://deno.land/x/sqlite_ulid)           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/sqlite-ulid?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/sqlite_ulid)                                                                       |
-| Datasette         | `datasette install datasette-sqlite-ulid` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-ulid.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-ulid) |
+| [Datasette](https://datasette.io/)         | `datasette install datasette-sqlite-ulid` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-ulid.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-ulid) |
+| [sqlite-utils](https://sqlite-utils.datasette.io/)         | `sqlite-utils install sqlite-utils-sqlite-ulid` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-sqlite-ulid.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-sqlite-ulid) |
 | Ruby              | `gem install sqlite-ulid`                 | ![Gem](https://img.shields.io/gem/v/sqlite-ulid?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/sqlite-ulid?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
@@ -364,7 +375,8 @@ select jsonschema_matches('{"maxLength": 5}', json_quote('alex')); -- 1
 | Python            | `pip install sqlite-jsonschema`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-jsonschema.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/sqlite-jsonschema/)                                             |
 | Node.js           | `npm install sqlite-jsonschema`                 | [![npm](https://img.shields.io/npm/v/sqlite-jsonschema.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/sqlite-jsonschema)                                       |
 | Deno              | [`deno.land/x/sqlite_jsonschema`](https://deno.land/x/sqlite_jsonschema)           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/sqlite-jsonschema?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/sqlite_jsonschema)                                                                       |
-| Datasette         | `datasette install datasette-sqlite-jsonschema` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-jsonschema.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-jsonschema) |
+| [Datasette](https://datasette.io/)         | `datasette install datasette-sqlite-jsonschema` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-jsonschema.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-jsonschema) |
+| [sqlite-utils](https://sqlite-utils.datasette.io/)         | `sqlite-utils install sqlite-utils-sqlite-jsonschema` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-sqlite-jsonschema.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-sqlite-jsonschema) |
 | Ruby              | `gem install sqlite-jsonschema`                 | ![Gem](https://img.shields.io/gem/v/sqlite-jsonschema?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/sqlite-jsonschema?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
@@ -400,7 +412,8 @@ select fastrand_double(); -- 0.740834390248454
 | Python            | `pip install sqlite-fastrand`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-fastrand.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/sqlite-fastrand/)                                             |
 | Node.js           | `npm install sqlite-fastrand`                 | [![npm](https://img.shields.io/npm/v/sqlite-fastrand.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/sqlite-fastrand)                                       |
 | Deno              | [`deno.land/x/sqlite_fastrand`](https://deno.land/x/sqlite_fastrand)           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/sqlite-fastrand?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/sqlite_fastrand)                                                                       |
-| Datasette         | `datasette install datasette-sqlite-fastrand` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-fastrand.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-fastrand) |
+| [Datasette](https://datasette.io/)         | `datasette install datasette-sqlite-fastrand` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-fastrand.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-fastrand) |
+| [sqlite-utils](https://sqlite-utils.datasette.io/)         | `sqlite-utils install sqlite-utils-sqlite-fastrand` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-sqlite-fastrand.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-sqlite-fastrand) |
 | Ruby              | `gem install sqlite-fastrand`                 | ![Gem](https://img.shields.io/gem/v/sqlite-fastrand?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/sqlite-fastrand?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
@@ -446,7 +459,8 @@ limit 100;
 | Python            | `pip install sqlite-vss`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-vss.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/sqlite-vss/)                                             |
 | Node.js           | `npm install sqlite-vss`                 | [![npm](https://img.shields.io/npm/v/sqlite-vss.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/sqlite-vss)                                       |
 | Deno              | [`deno.land/x/sqlite_vss`](https://deno.land/x/sqlite_vss)           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/sqlite-vss?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/sqlite_vss)                                                                       |
-| Datasette         | `datasette install datasette-sqlite-vss` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-vss.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-vss) |
+| [Datasette](https://datasette.io/)         | `datasette install datasette-sqlite-vss` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-vss.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-vss) |
+| [sqlite-utils](https://sqlite-utils.datasette.io/)         | `sqlite-utils install sqlite-utils-sqlite-vss` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-sqlite-vss.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-sqlite-vss) |
 | Ruby              | `gem install sqlite-vss`                 | ![Gem](https://img.shields.io/gem/v/sqlite-vss?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/sqlite-vss?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
@@ -479,7 +493,8 @@ sqlite> select hello('Alex');
 | Python            | `pip install sqlite-hello`                 | [![PyPI](https://img.shields.io/pypi/v/sqlite-hello.svg?color=blue&logo=python&logoColor=white)](https://pypi.org/project/sqlite-hello/)                                             |
 | Node.js           | `npm install sqlite-hello`                 | [![npm](https://img.shields.io/npm/v/sqlite-hello.svg?color=green&logo=nodedotjs&logoColor=white)](https://www.npmjs.com/package/sqlite-hello)                                       |
 | Deno              | [`deno.land/x/sqlite_hello`](https://deno.land/x/sqlite_hello)           | [![deno.land/x release](https://img.shields.io/github/v/release/asg017/sqlite-hello?color=fef8d2&include_prereleases&label=deno.land%2Fx&logo=deno)](https://deno.land/x/sqlite_hello)                                                                       |
-| Datasette         | `datasette install datasette-sqlite-hello` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-hello.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-hello) |
+| [Datasette](https://datasette.io/)         | `datasette install datasette-sqlite-hello` | [![PyPI](https://img.shields.io/pypi/v/datasette-sqlite-hello.svg?color=B6B6D9&label=Datasette+plugin&logoColor=white&logo=python)](https://pypi.org/project/datasette-sqlite-hello) |
+| [sqlite-utils](https://sqlite-utils.datasette.io/)         | `sqlite-utils install sqlite-utils-sqlite-hello` | [![PyPI](https://img.shields.io/pypi/v/sqlite-utils-sqlite-hello.svg?color=B6B6D9&label=sqlite-utils+plugin&logoColor=white&logo=python)](https://pypi.org/project/sqlite-utils-sqlite-hello) |
 | Ruby              | `gem install sqlite-hello`                 | ![Gem](https://img.shields.io/gem/v/sqlite-hello?color=red&logo=rubygems&logoColor=white)                                                                                                  |
 | Github Release    |                                            | ![GitHub tag (latest SemVer pre-release)](https://img.shields.io/github/v/tag/asg017/sqlite-hello?color=lightgrey&include_prereleases&label=Github+release&logo=github)
 
@@ -591,7 +606,7 @@ See [_Making SQLite extension gem install'able for Ruby Developers_](https://obs
 
 ### As Datasette Plugins
 
-Most of these SQLite extensions are also distributed as [Datasette Plugins](https://datasette.io/plugins). They are small wrappers around their cooresponding [pip packages](#pip-for-python-developers).
+Most of these SQLite extensions are also distributed as [Datasette Plugins](https://datasette.io/plugins). They are small wrappers around their corresponding [pip packages](#pip-for-python-developers).
 
 They can be installed like so:
 
@@ -605,6 +620,22 @@ Now all future Datasette instances will include `sqlite-regex` functions. Here w
 $ datasette --get '/_memory.csv?sql=select+regex_version()'
 regex_version()
 v0.1.0
+```
+### As sqlite-utils Plugins
+
+Most of these SQLite extensions are also distributed as [sqlite-utils plugins](https://sqlite-utils.datasette.io/en/stable/plugins.html). They are small wrappers around their corresponding [pip packages](#pip-for-python-developers).
+
+They can be installed like so:
+
+```bash
+sqlite-utils install sqlite-utils-sqlite-regex
+```
+
+Now when using the sqlite-utils CLI, the `sqlite-regex` functions will be available.
+
+```
+$ sqlite-utils memory 'select regex_version()'
+[{"regex_version()": "v0.2.3"}]
 ```
 
 ## Roadmap
